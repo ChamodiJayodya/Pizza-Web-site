@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno's Pizzeria orders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="topnav">
+        <a  href="index.html"style="font-family: Brush Script MT, Brush Script Std, cursive; font-style: oblique; margin-left:200px; 
+        font-size:30px;">
+          Bruno's Pizzaria</a>
+          <section style="margin-left: 600px;">
+            <a class="active_page" href="#">Order Now</a>
+            <a href="#">Register</a>
+            <a href="#">Features</a>
+          </section>
+      </div>
+
+      <div class="slideshow_container">
+          
+              <div class="mySlides fade">
+                  <img src="casteloes.jpg" style="width:100% ; height:600px">   
+                  <div class="text" style="font-family: Brush Script MT, Brush Script Std, cursive; font-style: oblique;">
+                  <h1>Welcome to Bruno's Pizzeria</h1>
+                  <p style="font-size: 25px;">Order a delicious pizza today</p>
+                  </div>
+              </div>
+      
+              <div class="mySlides fade">
+                  <img src="pizza-olive-italian-food-vegetarian-food-wallpaper-preview.jpg" style="width:100%; height: 600px;"> 
+                  <div class="text" style="font-family: Brush Script MT, Brush Script Std, cursive; font-style: oblique;">
+                    <h1>Welcome to Bruno's Pizzeria</h1>
+                    <p style="font-size: 25px;">Order a delicious pizza today</p>
+                    </div>          
+              </div>
+      
+              <div class="mySlides fade">
+                  <img src="wc1813154.jpg" style="width:100%; height: 600px;"> 
+                  <div class="text" style="font-family: Brush Script MT, Brush Script Std, cursive; font-style: oblique;">
+                    <h1>Welcome to Bruno's Pizzeria</h1>
+                    <p style="font-size: 25px;">Order a delicious pizza today</p>
+                    </div>           
+              </div>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <br><br>
+
+        <div class="row">
+            <form class="forms">
+                <div class="column" style="margin-left:200px;">
+                    <section>
+                        <h4>Pick Your Delivery?</h4><br>
+                        <label>PickUp</label>
+                        <input onclick="hideDeliveryAddress()" type="radio" id="PickUp" name="order" value="PickUp" style="margin-left:300px"/><br>
+                        <label>Delivery</label>
+                        <input onclick="showDeliveryAddress()" type="radio" id="Delivery" name="order" value="Delivery" style="margin-left:300px"/><br>
+                        <br>
+                        <h4> Your Pizza Order</h4><br>
+                        <textarea id="1" name="pizza" rows="2" cols="50">
+                        </textarea>
+                        <br>
+                    </section>
+                    <section id="deliveryAddress" style="display:none;">
+                        <h4>Delivery Address</h4>
+                        <label for="baddress">Address</label><br/>
+                        <input type="text" id="10" name="baddress" value="" style="width: 400px;"><br>
+                        <label for="bsuburb">Suburb</label><br>
+                        <input type="text" id="11" name="bsuburb" value="" style="width: 400px;"><br>
+                        <label for="tel">Postalcode</label><br>
+                        <input type="number" id="12" name="bpcode" value="" style="width: 400px;"><br><br>
+                    </section>
+                    <br>
+                    <section id="paymentMethod">
+                        <h4>Pay online or on pickup</h4><br>
+                        <label>PickUp</label>
+                        <input onclick="hidePayInfo()" type="radio" id="ppay" name="payment" value="ppay" style="margin-left:300px"/><br>
+                        <label>Online</label>
+                        <input onclick="showPayInfo()" type="radio" id="opay" name="payment" value="opay" style="margin-left:302px"/><br><br><br><br><br>
+                    </section>
+                    <input onclick="check()" type="submit" value="Submit" style="margin-top: 100px; background-color: skyblue; bottom: 30px;">
+                </div>
+                </form>
+                <form class="forms">
+                <div class="column" style="margin-left:100px; text-align:left;">
+                    <section id="customerDetails">
+                        <h4>Customer Details</h4>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="2" name="name" value="" style="width: 400px;"><br>
+                        <label for="email">Email</label><br>
+                        <input type="text" id="3" name="email" value="" style="width: 400px;"><br>
+                        <label for="tel">Contact Number</label><br>
+                        <input type="number" id="4" name="tel" value=""  style="width: 400px;"><br><br>
+                    </section>
+                    <section id="billingAddress">
+                        <h4>Billing Address</h4>
+                        <label>Same as delivery address?</label><br><br>
+                        <label>Yes</label>
+                        <input onclick="copy()" type="radio" id="5" name="ad" value="yes" style="margin-left:300px"/><br>
+                        <label>No</label>
+                        <input onclick="del()" type="radio" id="6" name="ad" value="no" style="margin-left:305px"/><br><br>
+                        <label for="baddress">Address</label><br>
+                        <input type="text" id="7" name="baddress" value="" style="width: 400px;"><br>
+                        <label for="bsuburb">Suburb</label><br>
+                        <input type="text" id="8" name="bsuburb" value="" style="width: 400px;"><br>
+                        <label for="tel">Postalcode</label><br>
+                        <input type="number" id="9" name="bpcode" value="" style="width: 400px;"><br><br>
+                    </section>
+                    <section id="payInfo" style="display:none;">
+                        <h4>Payment Information</h4>
+                        <label for="pname">Full Name</label><br>
+                        <input type="text" id="13" name="fname" value="" style="width: 400px;"><br>
+                        <label for="cCard">Credit Card</label><br>
+                        <input type="number" id="14" name="cCard" value="" style="width: 400px;"><br>
+                        <label for="tel">Expiry</label><br>
+                        <select name="month" id="months" style="width: 400px;">
+                            <option value="jan">January</option>
+                            <option value="feb">February</option>
+                            <option value="mar">March</option>
+                            <option value="apr">April</option>
+                            <option value="may">May</option>
+                            <option value="jun">June</option>
+                            <option value="jul">July</option>
+                            <option value="aug">August</option>
+                            <option value="sep">September</option>
+                            <option value="oct">October</option>
+                            <option value="nov">November</option>
+                            <option value="dec">December</option>
+                        </select><br>
+                        <select name="year" id="years" style="width: 400px;">
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select><br>
+                        <label for="ccv">CCV</label><br>
+                        <input type="number" id="15" name="ccv" value="" style="width: 400px;"><br/>
+                    </section>
+                </div>
+                <br/>
+            </form>
+        </div>
+
+        <div class="footer">
+            &copy; 2020 Bruno's Pizzeria
+          </div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+</body>
+</html>
